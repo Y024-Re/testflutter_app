@@ -17,24 +17,27 @@ class MyApp extends StatelessWidget {
           appBar: AppBar(
             title: Text("Y02塾"),
           ),
-          body: Center(
-            child: Column(
-              children: [
-                Text(
-                  HelloWorldText,
-                  style: TextStyle(
-                    fontSize: 30,
+          body: Consumer<MainModel>(builder: (context, model, child) {
+            return Center(
+              child: Column(
+                children: [
+                  Text(
+                    model.HelloWorldText,
+                    style: TextStyle(
+                      fontSize: 30,
+                    ),
                   ),
-                ),
-                RaisedButton(
-                  child: Text('ボタン'),
-                  onPressed: () {
-                    //何かをする
-                  },
-                ),
-              ],
-            ),
-          ),
+                  RaisedButton(
+                    child: Text('ボタン'),
+                    onPressed: () {
+                      //何かをする
+                      model.changeHelloWorldText();
+                    },
+                  ),
+                ],
+              ),
+            );
+          }),
         ),
       ),
     );

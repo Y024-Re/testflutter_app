@@ -4,7 +4,7 @@ class MainModel extends ChangeNotifier {
   String HelloWorldText = 'Flutter';
 
   void changeHelloWorldText() {
-    HelloWorldText = 'Flutter難しい';
+    HelloWorldText = 'Flutter難しいない！';
     notifyListeners();
   }
 }
